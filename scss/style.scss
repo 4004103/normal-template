@@ -1,0 +1,204 @@
+// * notice: scss 설치방법 https://nykim.work/97
+// * scss 컴파일 명령어 
+// * iTerm 들어가서 npm, node 버전 확인하고 설치돼있으면 html-template 경로로 들어와서 아래 명령어 실행하면 node-scss 컴파일 됨!!!
+// * npm run scss
+
+// * bootstrap5 사용
+
+// * notice: break points
+/*
+    @include media-breakpoint-down(xs)
+    $grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px
+    );
+*/
+
+
+// Bootstrap
+@import './bootstrap/bootstrap.scss';
+
+// Variable custom
+@import './variables-custom';
+
+// Reset
+@import './reset';
+
+// Layout
+@import './header';
+@import './footer';
+
+@import './modal/modal';
+@import './modal/toast';
+@import './accordion/accordion';
+
+
+// * ==========================================================================================================================================
+// * Font
+
+@font-face {
+    font-family: 'NotoSansKR';
+    src: url('../font/NotoSansKR-Regular.woff2');
+    font-weight: 400; 
+}
+
+@font-face {
+    font-family: 'NotoSansKR';
+    src: url('../font/NotoSansKR-Medium.woff2');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'NotoSansKR';
+    src: url('../font/NotoSansKR-Bold.woff2');
+    font-weight: 700;
+}
+
+// * ==========================================================================================================================================
+// * Common style
+body {
+    font-family: var(--bs-body-font-family);
+    @include media-breakpoint-up(lg) {
+        font-size: $pc-font-size;
+      }
+}
+
+.select-group {
+    position: relative;
+    border-radius: 3px;
+    background: #474747;
+    z-index: 0;
+    &:before {
+        content: '';
+        display: block;
+        width: 16px;
+        height: 16px;
+        background: url('../img/icon-select-down.svg') no-repeat;
+        position: absolute;
+        top: 18px;
+        right: 20px;
+    }
+}
+
+select {
+    @include media-breakpoint-up(lg) {
+        height: 50px;
+    }
+}
+
+.hidden-mobile {
+    @include media-breakpoint-down(lg) {
+        display: none !important;
+    }
+    @include media-breakpoint-up(lg) {
+        display: inherit;
+    }
+}
+
+.visible-mobile {
+    @include media-breakpoint-down(lg) {
+        display: inherit;
+    }
+    @include media-breakpoint-up(lg) {
+        display: none !important;
+    }
+}
+
+.position-relative {
+    position: relative;
+}
+
+// * ==========================================================================================================================================
+// * 탑 버튼
+
+.btn-top__wrap {
+    position: sticky;
+    bottom: 0px;
+    float: right;
+    margin-right: 20px;
+    transform: translateY(-70px);
+    opacity: 0;
+}
+
+.btn-top {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 5px 0px #D5D4D433;
+    background: #4c4e4e;
+    button {
+        background: transparent;
+        border: 0;
+    }
+    img {
+        scale: 1.5;
+    }
+    &:hover img {
+        transform: scale(1.3);
+    }
+}
+
+// * ==========================================================================================================================================
+// * .content-wrap 컨텐츠 body 역할의 클래스
+
+.content-wrap {
+    padding: 20% 0;
+    background-color: #f2f2f2;;
+}
+
+// * ==========================================================================================================================================
+// * 각 페이지 Title
+
+.h2-title {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+    @include media-breakpoint-up(lg) {
+        font-size: 55px;
+        margin-bottom: 30px;
+        text-align: inherit;
+    }
+}
+
+.h2-next-p {
+    font-size: 22px;    
+    font-weight: 500;
+    color: #000;
+    text-align: center;
+    @include media-breakpoint-up(lg) {
+        max-width: 1100px;
+        font-size: 35px;    
+        text-align: inherit;
+        letter-spacing: -1px;
+    }
+}
+
+.font1 {
+    font-size: var(--bs-font-size-lg);
+}
+
+.font2 {
+    font-size: var(--bs-font-size-md);
+}
+
+.font3 {
+    font-size: var(--bs-font-size-sm);
+}
+
+// * ==========================================================================================================================================
+// * product-list 테스트 스타일!
+.product-list__price-origin {
+    color: $cyan;
+}
+
+.product-list__price-sale {
+    color: $teal;
+}

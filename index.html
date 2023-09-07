@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./favicon.ico">
+    <!-- style -->
+    <link rel="stylesheet" href="./dist/css/style.css">
+    <title>html 기본 템플릿</title>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Start: Header -->
+    <header class="nav-wrap">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-container">
+                    <div class="logo">
+                        <a href="/"><img src="dist/img/logo.png" alt="companyName logo"></a>
+                    </div>
+                    <div id="mainListDiv" class="main_list">
+                        <ul class="navlinks">
+                            <li><a class="myAnchor" href="#companyName">회사명</a></li>
+                            <li><a class="myAnchor" href="#shipbaesong">쉽배송</a></li>
+                            <li><a class="myAnchor" href="#kakao">카카오페이 배송</a></li>
+                            <li><a class="myAnchor" href="#bob">박스오블리스</a></li>
+                            <li><a class="myAnchor" href="https://tulip-hope-c88.notion.site/companyName-KOREA-486969e17137400ba5a69bfab3334311" target="_blank">인재채용</a></li>
+                        </ul>
+                    </div>
+                    <span class="navTrigger">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End: Header -->
+
+    <div class="content-wrap">
+       <section class="my-5 py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col" style="background-color: red;">
+                        섹션 안에 컨텐츠 
+                    </div>
+
+                    <div class="col" style="border: 2px dashed darkkhaki;">
+                        class="col" 하면 자동이다!!!!
+                    </div>
+
+                    <div>
+                        <p class="font1">font1</p>
+                        <p class="font2">font2</p>
+                        <p class="font3">font3</p>
+                    </div>
+
+                    <!-- 헤더 태그 테스트 -->
+                    <div class="col" style="background-color: #c8c8c8;">
+                        <h1>h1</h1>
+                        <h2>h2</h2>
+                        <h3>h3</h3>
+                        <h4>h4</h4>
+                        <h5>h5</h5>
+                        <span class="badge" style="background-color: #555;">있음</span>
+                        <span class="badge"></span>
+                    </div>
+
+                    <!-- 페이지네이션 테스트 -->
+                    <nav aria-label="Page navigation example" class="col">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="javascript:void(0)">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0)">1</a></li>
+                            <li class="page-item"><a class="page-link active" href="javascript:void(0)">2</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0)">Next</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- ajax에서 받아온 데이터 뿌리기 -->
+                <div class="row">
+                    <div class="col-12 mt-5" style="background: paleturquoise">
+                        <table class="table">
+                            <tbody class="tableBody">
+                                <!-- 동적 데이터 생성 -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!--  가로세로 비율 ratio -->
+                <div class="row">
+                    <div class="col-4">
+                        <div class="ratio ratio-1x1" style="background-color: burlywood;">
+                            <div>ratio-1x1</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="ratio ratio-4x3" style="background-color: palevioletred;">
+                            <div>ratio-4x3</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="ratio ratio-16x9" style="background-color: darkolivegreen;">
+                            <div>ratio-16x9</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="ratio ratio-21x9" style="background-color: peru;">
+                            <div>ratio-21x9</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Start: Modal -->
+                <button type="button" id="openModalBtn" class="btn btn-outline-secondary">Open Modal</button>
+    
+                <div id="modal" class="modal">
+                    <div class="modal-wrap">
+                        <div class="modal-content">
+                            <span class="close btn-close"></span>
+                            <h2>Modal Header</h2>
+                            <p>This is the modal content.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End: Modal -->
+
+                <!-- Start: Toast -->
+                <div>
+                    <button type="button" id="showToastBtn" class="btn btn-outline-primary">Show Toast</button>                
+                    <div id="toast" class="toast">This is a toast message.</div>
+                </div>
+                <!-- End: Toast -->
+
+                <!-- Start: Images -->
+                <div class="img-fluid">
+                    <figure class="figure">
+                        <img class="figure-img"
+                            src="https://images.unsplash.com/photo-1508322345744-2745200b300f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80" alt="">
+                    </figure>
+                    <figcaption class="figure-caption">
+                        피규얼 캡션~~~~~
+                    </figcaption>
+                </div>
+                <div class="img-thumbnail">
+                    <figure class="figure">
+                        <img src="https://images.unsplash.com/photo-1575110867130-cc95e46a26fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80" alt="">
+                    </figure>
+                </div>
+                <!-- End: Images -->
+
+                <!-- Start: List group -->
+                <ul class="list-group">
+                    <li class="list-group-item">
+                      <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+                      <label class="form-check-label" for="firstCheckbox">First checkbox</label>
+                    </li>
+                    <li class="list-group-item">
+                      <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="firstRadio" checked>
+                      <label class="form-check-label" for="firstRadio">First radio</label>
+                    </li>
+                </ul>
+                <!-- End: List group -->
+
+                <!-- Start: Breadcrumb -->
+                <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="#">Home</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Library</li>
+                    </ol>
+                </nav>
+                <!-- End: Breadcrumb -->
+
+                <!-- Start: Accordion -->
+                <div class="container">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="accordion">
+                      <div class="accordion-item">
+                        <button id="accordion-button" aria-expanded="false"><span class="accordion-title">Why is the moon sometimes out during the day?</span><span class="icon" aria-hidden="true"></span></button>
+                        <div class="accordion-content">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <button id="accordion-button" aria-expanded="false"><span class="accordion-title">Why is the sky blue?</span><span class="icon" aria-hidden="true"></span></button>
+                        <div class="accordion-content">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <button id="accordion-button" aria-expanded="false"><span class="accordion-title">Will we ever discover aliens?</span><span class="icon" aria-hidden="true"></span></button>
+                        <div class="accordion-content">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <button id="accordion-button" aria-expanded="false"><span class="accordion-title">How much does the Earth weigh?</span><span class="icon" aria-hidden="true"></span></button>
+                        <div class="accordion-content">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <button id="accordion-button" aria-expanded="false"><span class="accordion-title">How do airplanes stay up?</span><span class="icon" aria-hidden="true"></span></button>
+                        <div class="accordion-content">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <!-- End: Accordion -->
+
+            </div>
+       </section>
+
+        <!-- Start: Top button -->
+        <div id="topButton" class="btn-top__wrap">
+            <div class="btn-top">
+                <button onclick="scrollToTop()">
+                    <img src="dist/img/icon-arrow-top-white.svg" alt="위로가기">
+                </button>
+            </div>
+        </div>
+        <!-- End: Top button -->
+    </div>
+
+    <!-- Start: Footer -->
+    <section id="footer" class="container-fluid section-padding footer">
+        <!-- content -->
+      <div class="container footer-container">
+         <div class="footer-logo">
+            <img src="dist/img/logo-footer.png" alt="companyName">
+         </div>
+         <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-top__text">
+                    <div class="footer-top__text-div">
+                    CEO 은 데이비드 현빈 ㅣ 사업자등록번호 : 673-86-00253 <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=6738600253" target="_blank">[사업자등록번호 확인]</a> <br class="hidden-mobile" />
+                    [06016] 서울특별시 강남구 테헤란로87길 36(삼성동, 도심공항타워) 12층 1201호 ㅣ TEL : <a href="tel:02-2088-8241">02-2088-8241</a> ㅣ E-mail : <a href="mailto:cs@companyName.co.kr">cs@companyName.co.kr</a>                    
+                    </div>
+                    <div class="footer-top__select select-wrap">
+                        <div class="select-group">
+                            <select name="" id="mySelect" class="select-wrap__select" onchange="openNewWindow()">
+                                <option selected disabled value="">Family Site</option>
+                                <option value="https://shipbaesong.com/" target="_blank">쉽배송</option>
+                                <option value="https://boxobliss.com/" target="_blank">박스오블리스</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="footer-bottom">
+                COPYRIGHT ⓒ companyName CO.LTD  ALL RIGHTS RESERVED.
+            </div>
+         </div>
+      </div>
+    </section>
+    <!-- End: Footer -->
+</body>
+<script>
+
+    // 네비 바 열고 닫기 동작 --------------------------------
+    const navTrigger = document.querySelector('.navTrigger');
+    const mainListDiv = document.querySelector('#mainListDiv');
+    const navList = document.querySelector('.main_list');
+    const navLink = document.querySelector('.navlinks');
+
+    navTrigger.addEventListener('click', function() {
+        this.classList.toggle('active');
+        mainListDiv.classList.toggle('show_list');
+    });
+
+    navLink.addEventListener('click', function() {
+        navTrigger.classList.remove('active');
+        mainListDiv.classList.remove('show_list');        
+    });
+
+    // 탑버튼 스크롤 내려가면 보임 --------------------------------
+    window.addEventListener('scroll', function() {
+        let scrollHeight = window.pageYOffset;
+
+        // 스크롤 높이가 일정 값 이상인 경우 버튼을 보여줌
+        if (scrollHeight > 700) {
+            // 버튼을 보여주는 코드 작성            
+            document.getElementById('topButton').style.transition = 'opacity 0.3s ease';
+            document.getElementById('topButton').style.opacity = '1';
+        } else {
+            // 버튼을 숨기는 코드 작성
+            document.getElementById('topButton').style.transition = 'opacity 0.3s ease';
+            document.getElementById('topButton').style.opacity = '0';
+        }
+    });
+
+    // 패밀리 사이트 새창으로 이동 --------------------------------
+    function openNewWindow() {
+        let selectElement = document.getElementById("mySelect");
+        let selectedValue = selectElement.value;
+        
+        if (selectedValue) {
+            window.open(selectedValue, "_blank");
+        }
+    };
+
+    // 모달 팝업 Modal --------------------------------
+    const modal = document.getElementById('modal');
+    const openModalBtn = document.getElementById('openModalBtn');
+    const closeBtn = document.getElementsByClassName('close')[0];
+
+    // When the user clicks the button, open the modal
+    openModalBtn.addEventListener('click', function() {
+        modal.style.display = 'block';
+    });
+
+    // When the user clicks on <span> (x), close the modal
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // 토스트 팝업 Toast --------------------------------
+    const toast = document.getElementById('toast');
+    const showToastBtn = document.getElementById('showToastBtn');
+
+    // Function to show the toast
+    function showToast() {
+        toast.style.display = 'block';
+        
+        // Hide the toast after a few seconds (e.g., 3 seconds)
+        setTimeout(function() {
+            toast.style.display = 'none';
+        }, 3000);
+    }
+
+    // Add a click event listener to the button
+    showToastBtn.addEventListener('click', showToast);
+
+    // 아코디언 --------------------------------
+    const items = document.querySelectorAll(".accordion button");
+
+    function toggleAccordion() {
+    const itemToggle = this.getAttribute('aria-expanded');
+    
+    for (i = 0; i < items.length; i++) {
+        items[i].setAttribute('aria-expanded', 'false');
+    }
+    
+    if (itemToggle == 'false') {
+        this.setAttribute('aria-expanded', 'true');
+    }
+    }
+
+    items.forEach(item => item.addEventListener('click', toggleAccordion));
+
+    // 탑버튼 --------------------------------
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    };
+
+    // ajax 테스트 --------------------------------
+    $(function() {
+        $.ajax({
+            type: 'get',
+            url: 'https://jsonplaceholder.typicode.com/posts',
+            dataType: 'json',
+            success: function(data) {
+                for (let i = 0; i < (data.length / 13); i++) {
+                    let tableTr = '<tr>';
+                    tableTr += '<td>' + data[i].title + '</td>' + '<td>' + data[i].id + '</td>';
+                    tableTr += '</tr>';
+
+                    $('.tableBody').append(tableTr);
+                }
+                console.log(data, '데이타 ㅎㅎ')
+            }
+        })
+    });
+
+</script>
+</html>

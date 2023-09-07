@@ -1,0 +1,28 @@
+// * ==========================================================================================================================================
+// * 변수 기본값 정의
+
+:root {
+    --bs-body-font-family: "NotoSansKR";
+  }
+
+// * font-size: pc 16px / mobile 14px;
+$mo-font-size: 0.875rem;
+$pc-font-size: 1rem;
+
+// * default color
+$primary: #36d1eb;
+$error: #D51A1A;
+
+//* background color
+$error-bg: #FAECF0;
+
+// * gray color
+$gray-f8: #f8f8f8;
+$gray-f2: #f2f2f2;
+$gray-e5: #e5e5e5;
+$gray-db: #dbdbdb;
+$gray-cc: #cccccc;
+$gray-88: #888888;
+$gray-55: #555555;
+$gray-33: #333333;
+$gray-11: #111111;

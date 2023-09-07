@@ -1,0 +1,362 @@
+
+// * ==========================================================================================================================================
+// * Header
+
+/* Navbar section */
+
+.nav-wrap {    
+    // .nav 와 height 같음
+    height: 60px;
+    @include media-breakpoint-up(lg) {
+        height: 100px;
+    }
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: red;
+}
+
+.nav {
+	width: 100%;
+	height: 60px;
+	position: fixed;
+	line-height: 60px;
+	text-align: center;
+    background-color: white;
+    border-bottom: 1px solid #eee;
+    z-index: 10;
+    @include media-breakpoint-up(lg) {
+        padding: 20px;
+        height: 100px; 
+    }
+}
+
+.nav div.logo a {  
+    display: inline-block;
+    width: 80px;
+	height: 60px;
+    @include media-breakpoint-up(lg) { 
+	    width: 145px;
+    }
+}
+
+.nav div.main_list {
+	height: 60px;
+	float: right;
+}
+
+.nav div.main_list ul {
+	width: 100%;
+	height: 60px;
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.nav div.main_list ul li {
+	width: auto;
+	height: 60px;
+	padding: 0;
+	padding-right: 3rem;
+    &:last-child {
+        padding-right: 0;
+    }
+}
+
+.nav div.main_list ul li a {
+	text-decoration: none;
+	line-height: 60px;
+    @include media-breakpoint-up(lg) {
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
+
+.nav div.main_list ul li a:hover {
+	color: #00e676;
+}
+
+.navTrigger {
+	display: none;
+}
+
+.nav {
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+/* Media qurey section */
+
+@include media-breakpoint-down(lg) {
+	.navTrigger {
+		// display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+	}
+	.nav div.main_list {
+		width: 100%;
+		height: 0;
+        display: none;
+	}
+	.nav div.show_list {
+		height: auto;
+		display: block;
+	}
+	.nav div.main_list ul {
+		flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 60px;
+        background: white;
+        border-top: 10px solid #36d1eb;
+        padding-top: 60px;        
+        &:before {
+            content: '';
+            width: 600px;
+            height: 1px;
+            background: #eee;
+            display: block;
+            margin: 0 auto;
+        }
+	}
+	.nav div.main_list ul li {
+        width: 100%;
+		max-width: 540px;
+        margin: 0 auto;
+        text-align: left;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        &:after {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 2px;
+            background: #a8a8a8;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);         
+        }
+        &:hover {
+            a {
+                color: $primary;
+            }
+            &:after {
+                background: $primary;
+            }
+        }
+	}
+	.nav div.main_list ul li a {
+		display: block;
+        line-height: 60px;
+        font-weight: 500;
+        text-decoration: none;
+        font-size: $mo-font-size;
+	}
+	.nav div.media_button {
+		display: block;
+	}
+}
+
+/* Animation */
+/* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
+
+.navTrigger {
+	cursor: pointer;
+	width: 23px;
+	height: 16px;
+}
+
+.navTrigger i {
+	background-color: black;
+	border-radius: 2px;
+	content: "";
+	display: block;
+	width: 100%;
+    height: 2px;
+}
+
+.navTrigger i:nth-child(1) {
+    -webkit-animation: outT 0.8s backwards;
+    animation: outT 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(2) {
+    margin: 5px 0;
+    -webkit-animation: outM 0.8s backwards;
+    animation: outM 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+    width: 80% !important;
+}
+
+.navTrigger.active i:nth-child(2) {
+    // 햄버거메뉴 가운데 width 짧은거 
+    width: 100% !important;
+}
+
+.navTrigger i:nth-child(3) {
+    -webkit-animation: outBtm 0.8s backwards;
+    animation: outBtm 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger.active i:nth-child(1) {
+    -webkit-animation: inT 0.8s forwards;
+    animation: inT 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(2) {
+    -webkit-animation: inM 0.8s forwards;
+    animation: inM 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(3) {
+    -webkit-animation: inBtm 0.8s forwards;
+    animation: inBtm 0.8s forwards;
+}
+
+@-webkit-keyframes inM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes inM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes outM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes outM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes inT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(7px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(7px) rotate(135deg);
+    }
+}
+
+@keyframes inT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(7px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(7px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(7px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(7px) rotate(135deg);
+    }
+}
+
+@keyframes outT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(7px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(7px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes inBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-7px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-7px) rotate(135deg);
+    }
+}
+
+@keyframes inBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-7px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-7px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-7px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-7px) rotate(135deg);
+    }
+}
+
+@keyframes outBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-7px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-7px) rotate(135deg);
+    }
+}
