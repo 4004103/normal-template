@@ -1738,25 +1738,25 @@ textarea.form-control-lg {
 .form-check {
   display: block;
   min-height: 1.5rem;
-  padding-left: 1.5em;
+  padding-left: 1.75em;
   margin-bottom: 0.125rem; }
   .form-check .form-check-input {
     float: left;
-    margin-left: -1.5em; }
+    margin-left: -1.75em; }
 
 .form-check-reverse {
-  padding-right: 1.5em;
+  padding-right: 1.75em;
   padding-left: 0;
   text-align: right; }
   .form-check-reverse .form-check-input {
     float: right;
-    margin-right: -1.5em;
+    margin-right: -1.75em;
     margin-left: 0; }
 
 .form-check-input {
-  width: 1em;
-  height: 1em;
-  margin-top: 0.25em;
+  width: 1.25em;
+  height: 1.25em;
+  margin-top: 0.125em;
   vertical-align: top;
   background-color: #fff;
   background-repeat: no-repeat;
@@ -6793,7 +6793,7 @@ a {
 
 img {
   max-width: 100%;
-  vertical-align: middle; }
+  vertical-align: bottom; }
 
 table {
   border-collapse: collapse;
@@ -7279,6 +7279,40 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
     font-size: 1rem;
     font-weight: 300;
     margin: 2em 0; }
+
+.cart-item__li {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 20px 0;
+  border: 2px dashed salmon; }
+  .cart-item__li:not(:first-of-type) {
+    border-top: 1px solid #f8f9fa; }
+
+.cart-item__thumbnail {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  border: 2px dashed gold; }
+
+.cart-item__content {
+  display: flex;
+  flex-direction: column;
+  width: 345px;
+  overflow: hidden; }
+
+.cart-item__quantity {
+  display: inline-flex;
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: center;
+  border: 1px solid #e9ecef;
+  width: 88px;
+  border-radius: 3px; }
+
+.cart-item__delete {
+  background-color: #dee2e6; }
 
 @font-face {
   font-family: 'NotoSansKR';
