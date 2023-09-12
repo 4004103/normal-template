@@ -7439,3 +7439,22 @@ body {
 
 .product-list__price-sale {
   color: #20c997; }
+
+.form-field {
+  position: relative;
+  line-height: 1.5;
+  padding: 10px 0; }
+
+.form-label {
+  float: left; }
+
+.form-insert {
+  position: absolute;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 150px; }
+
+.table-wrap {
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray; }

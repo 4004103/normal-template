@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./favicon.ico">
+    <!-- style -->
+    <link rel="stylesheet" href="./dist/css/style.css">
+    <title>html 기본 템플릿 - product list</title>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Start: Header -->
+    <!-- End: Header -->
+
+    <div class="content-wrap">
+       <section class="my-5 py-5">
+            <div class="container">
+                <!-- Start: Breadcrumb -->
+                <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="#">Home</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Product List</li>
+                    </ol>
+                </nav>
+                <!-- End: Breadcrumb -->
+
+                <!-- Start: My page -->
+                <div class="table-wrap">         
+                    <div class="form-field clearfix">
+                        <span class="form-label">아이디</span>
+                        <div class="form-insert">
+                            <span>아이디123</span>
+                        </div>
+                    </div>
+                    <div class="form-field clearfix">
+                        <span class="form-label">비밀번호</span>
+                        <div class="form-insert">
+                            <div><input type="password"></div>
+                        </div>
+                    </div>
+                    <div class="form-field clearfix">
+                        <span class="form-label">이름</span>
+                        <div class="form-insert">
+                            <span>땡땡이</span>
+                        </div>
+                    </div>
+                    <div class="form-field clearfix">
+                        <span class="form-label">휴대폰 번호</span>
+                        <div class="form-insert">
+                            <div><input type="number"> <span>-</span> <input type="number"></div>
+                        </div>
+                    </div>           
+                </div>
+                <div class="btn-group mt-4">
+                    <button class="btn btn-secondary">돌아가기</button>
+                    <button class="btn btn-dark">저장</button>
+                </div>
+                <!-- End: My page -->
+
+            </div>
+       </section>
+
+        <!-- Start: Top button -->
+        <div id="topButton" class="btn-top__wrap">
+            <div class="btn-top">
+                <button onclick="scrollToTop()">
+                    <img src="dist/img/icon-arrow-top-white.svg" alt="위로가기">
+                </button>
+            </div>
+        </div>
+        <!-- End: Top button -->
+    </div>
+
+    <!-- Start: Footer -->
+    <!-- End: Footer -->
+</body>
+<script>
+    // 탑버튼 스크롤 내려가면 보임 --------------------------------
+    window.addEventListener('scroll', function() {
+        let scrollHeight = window.pageYOffset;
+
+        // 스크롤 높이가 일정 값 이상인 경우 버튼을 보여줌
+        if (scrollHeight > 700) {
+            // 버튼을 보여주는 코드 작성            
+            document.getElementById('topButton').style.transition = 'opacity 0.3s ease';
+            document.getElementById('topButton').style.opacity = '1';
+        } else {
+            // 버튼을 숨기는 코드 작성
+            document.getElementById('topButton').style.transition = 'opacity 0.3s ease';
+            document.getElementById('topButton').style.opacity = '0';
+        }
+    });
+
+    // 패밀리 사이트 새창으로 이동 --------------------------------
+    function openNewWindow() {
+        let selectElement = document.getElementById("mySelect");
+        let selectedValue = selectElement.value;
+        
+        if (selectedValue) {
+            window.open(selectedValue, "_blank");
+        }
+    };
+
+    // 탑버튼 --------------------------------
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    };
+</script>
+</html>
