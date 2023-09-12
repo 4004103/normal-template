@@ -17,7 +17,7 @@
         xl: 1200px,
         xxl: 1400px
     );
-    
+
 */
 /*!
    * Bootstrap  v5.2.3 (https://getbootstrap.com/)
@@ -7502,3 +7502,12 @@ body {
  */
 [data-uipack='ui-tabpanel'].tab__wrap-div {
   background-color: pink; }
+
+.tab__ul {
+  position: unset;
+  height: 62px;
+  line-height: 1.5;
+  padding: 10px; }
+
+.tab__li.active {
+  background-color: #36d1eb; }

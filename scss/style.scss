@@ -17,7 +17,7 @@
         xl: 1200px,
         xxl: 1400px
     );
-    
+
 */
 
 
@@ -245,30 +245,16 @@ select {
 [data-uipack='ui-tabpanel'].tab__wrap-div {
     background-color: pink;
 }
-//   box-sizing: border-box;
-//   width: 100%;
-//   [role='tablist'] {
-//     overflow: hidden;
-//   }
-//   [role='tab'] {
-//     float: left;
-//     padding: 5px 10px;
-//     cursor: pointer;
-//     &[aria-selected='true'],
-//     &.#{$activeClass} {
-//       color: red;
-//     }
-//   }
-//   [role='tabpanel'] {
-//     display: none;
-//     padding: 5px 10px;
-//     min-height: 200px;
-//     background: $gray-light;
-//     border: 1px solid $gray-dark;
-//     &[aria-hidden='false'],
-//     &.#{$activeClass} {
-//       display: block;
-//     }
-//   }
-// }
 
+.tab__ul {
+    position: unset;
+    height: 62px;
+    line-height: 1.5;
+    padding: 10px;
+}
+
+.tab__li {
+    &.active {
+        background-color: $primary;
+    }
+}

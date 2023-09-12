@@ -61,6 +61,39 @@
                 </div>
                 <!-- End: My page -->
 
+                <!-- Start: Tab Menu -->
+                <div class="tab__wrap-div" data-uipack="ui-tabpanel">
+                    <ul class="nav nav-tabs tab__ul" role="tablist">
+                        <li id="tab1" role="tab" class="nav-item tab__li active" aria-controls="panel1" aria-selected="true" tabindex="0"><button class="nav-link">TAB 1</button></li>
+                        <li id="tab2" role="tab" class="nav-item tab__li" aria-controls="panel2" aria-selected="false" tabindex="0"><button class="nav-link">TAB 2</button></li>
+                        <li id="tab3" role="tab"class="nav-item tab__li" aria-controls="panel3" aria-selected="false" tabindex="0"><button class="nav-link">TAB 3</button></li>
+                    </ul>
+
+                    <div class="tab-content" id="pills-tabContent" role="tabContent">
+                        <!-- panel1 -->
+                        <div id="panel1" role="tabpanel" class="tab-pane show active" aria-labelledby="tab1" aria-hidden="false">
+                            <h3>PANEL 1</h3>
+                            <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure aperiam, magni provident ad hic blanditiis numquam voluptas dolores vel quas itaque ratione facilis tempora consectetur repellendus. Consequuntur aperiam explicabo voluptatum!
+                            </p>
+                        </div>
+                        <!-- panel2 -->
+                        <div id="panel2" role="tabpanel" class="tab-pane" aria-labelledby="tab2" aria-hidden="true">
+                            <h3>PANEL 2</h3>
+                            <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto nemo fugiat quod laborum quos unde dolore accusantium quae eaque, quidem ad laudantium ea cum omnis voluptatem alias similique. Expedita, saepe!
+                            </p>
+                        </div>
+                        <div id="panel3" role="tabpanel" class="tab-pane" aria-labelledby="tab3" aria-hidden="true">
+                            <h3>PANEL 3</h3>
+                            <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae pariatur facilis, minus modi delectus non sequi est vero exercitationem asperiores blanditiis culpa, perspiciatis harum libero. Officia harum sequi vero adipisci.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End: Tab Menu -->
+
             </div>
        </section>
 
@@ -112,5 +145,36 @@
         behavior: 'smooth'
       });
     };
+
+    // 탭메뉴 --------------------------------
+    (function($) {
+        function eventHandler(e) {
+            let $eTarget = $(e.currentTarget);
+            let $targetPanel = $('[aria-labelledby="' + $eTarget.attr('id') + '"]');
+
+            // 조건문으로 이벤트 구분
+            if (e.type === 'click') { // 클릭시 동작
+            $eTarget
+                .attr('aria-selected', true)
+                .addClass('active')
+                .siblings('[role="tab"]')
+                .attr('aria-selected', false)
+                .removeClass('active');
+
+            $targetPanel
+                .attr('aria-hidden', false)
+                .addClass('active')
+                .siblings('[role="tabpanel"]')
+                .attr('aria-hidden', true)
+                .removeClass('active');
+            } else if (e.type === 'keydown' && e.which === 13) { // 키가 눌렸을때 && 키가 엔터일떄
+            // e.which 는 keycode 값을 판별하는데 13 이 엔터키에 해당되는 keycode
+            $(this).click(); // 현재 엘리멘트에 클릭이벤트 발생시킴
+            }
+        }
+
+        // 바인딩에 keydown 이벤트 추가 - 쉼표 없음
+        $('[role="tab"]').on('click keydown', eventHandler);
+    }(jQuery));
 </script>
 </html>
