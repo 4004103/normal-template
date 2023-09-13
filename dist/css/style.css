@@ -7376,6 +7376,9 @@ body {
   select {
     height: 50px; } }
 
+input[type=number] {
+  width: 100%; }
+
 @media (max-width: 991.98px) {
   .hidden-mobile {
     display: none !important; } }
@@ -7483,14 +7486,20 @@ body {
   padding: 10px 0; }
 
 .form-label {
-  float: left; }
+  display: flex;
+  font-weight: 500; }
+  @media (min-width: 992px) {
+    .form-label {
+      float: left; } }
 
 .form-insert {
-  position: absolute;
-  left: 0;
   display: inline-flex;
-  align-items: center;
-  margin-left: 150px; }
+  align-items: center; }
+  @media (min-width: 992px) {
+    .form-insert {
+      position: absolute;
+      left: 0;
+      margin-left: 150px; } }
 
 .table-wrap {
   border-top: 1px solid gray;

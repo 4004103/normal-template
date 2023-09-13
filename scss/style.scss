@@ -96,6 +96,10 @@ select {
     }
 }
 
+input[type=number] {
+    width: 100%;
+}
+
 .hidden-mobile {
     @include media-breakpoint-down(lg) {
         display: none !important;
@@ -221,15 +225,21 @@ select {
 }
 
 .form-label {
-    float: left;
+    display: flex;
+    font-weight: 500;
+    @include media-breakpoint-up(lg) {
+        float: left;
+    }
 }
 
 .form-insert {
-    position: absolute;
-    left: 0;
     display: inline-flex;
     align-items: center;
-    margin-left: 150px;
+    @include media-breakpoint-up(lg) {
+        position: absolute;
+        left: 0;
+        margin-left: 150px;
+    }
 }
 
 .table-wrap {
