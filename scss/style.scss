@@ -34,9 +34,9 @@
 @import './header';
 @import './footer';
 
-@import './modal/modal';
-@import './modal/toast';
-@import './accordion/accordion';
+@import './custom-style/modal';
+@import './custom-style/toast';
+@import './custom-style/accordion';
 
 // pages
 @import './pages/cart';
